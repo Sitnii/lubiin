@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: 'Playfair Display', serif;
+  color: #8B0000;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: slideUp 1s ease-in-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  color: #b30000;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  animation: slideUp 2s ease-in-out;
+}
+
+.card {
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+}
+
+.card-label {
+  background-color: #b30000;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.card-label:hover {
+  background-color: #d10000;
+}
+
+.card-content {
+  margin-top: 20px;
+  display: none;
+  font-size: 1.1rem;
+  background-color: #ffe6e6;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #b30000;
+}
+
+#toggle-card:checked ~ .card-content {
+  display: block;
+}
+
+.calendar-collage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.calendar-grid {
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  gap: 5px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.day {
+  color: #900;
+}
+
+.date, .empty {
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.highlighted {
+  background-color: #c00;
+  color: #fff;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 15px;
+}
+
+.collage img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #b30000;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .calendar-collage {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
